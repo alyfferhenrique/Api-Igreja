@@ -6,6 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "Igreja")
@@ -15,25 +17,31 @@ public class IgrejaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Column(nullable = false,length = 20)
+    @Column(length = 100)
+    @NotBlank
     private String nome;
 
-    @Column(nullable = false,length = 20)
+    @Column(length = 14,unique = true)
+    @NotBlank
     private String CNPj;
  
-    @Column(nullable = false,length = 20)
+    @Column(length = 100)
+    @NotBlank
     private String cidade;
 
-    @Column(nullable = false,length = 20)
+    @Column(length = 100)
     private String estado;
 
-    @Column(nullable = false,length = 20)
+    @Column(length = 20)
+    @NotBlank
     private String login;
 
-    @Column(nullable = false,length = 20)
+    @Column(length = 100,unique = true)
+    @Email
     private String email;
 
-    @Column(nullable = false,length = 20)
+    @Column(length = 20)
+    @NotBlank
     private String senha;
 
     public Long getId() {

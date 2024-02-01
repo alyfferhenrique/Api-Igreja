@@ -28,7 +28,7 @@ public class IgrejaController {
 
     }
     
-    @GetMapping
+    @GetMapping("/buscartodos")
     public ResponseEntity<List<IgrejaModel>> getAllIgreja(){
         return ResponseEntity.ok(igrejaService.getAllIgrejas());
     }
@@ -39,18 +39,18 @@ public class IgrejaController {
                
     }
 
-    @PostMapping
+    @PostMapping("/registerIgreja")
     public ResponseEntity<IgrejaModel> createIgreja(@NonNull @RequestBody IgrejaModel igrejaModel){
         return ResponseEntity.ok(igrejaService.createIgreja(igrejaModel));
 
     }
-    @PutMapping("/{id}")
+    @PutMapping("/editar/{id}")
     public ResponseEntity<IgrejaModel> updateUser(@NonNull @PathVariable Long id, @RequestBody IgrejaModel igrejaModel) {
     igrejaService.updateIgreja(id, igrejaModel);
     return ResponseEntity.noContent().build();
 }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deletar/{id}")
     public ResponseEntity<IgrejaModel> deleteUser(@NonNull @PathVariable Long id){
         igrejaService.deleteIgreja(id);
             return ResponseEntity.noContent().build();

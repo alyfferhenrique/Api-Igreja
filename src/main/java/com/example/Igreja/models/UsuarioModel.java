@@ -21,25 +21,25 @@ public class UsuarioModel {
     @JoinColumn(name = "id_igreja")
     private IgrejaModel idIgreja;
 
-    @Column(nullable = false,length = 20)
+    @Column(nullable = false,length = 100)
     private String login;
 
-    @Column(nullable = false,length = 20)
+    @Column(nullable = false,length = 100)
     private String email;
 
     @Column(nullable = false,length = 20)
     private String senha;
 
-    @Column(nullable = false,length = 20)
+    @Column(nullable = false,length = 100)
     private String nome;
 
-    @Column(nullable = false,length = 20)
+    @Column(nullable = false,length = 100)
     private String cidade;
 
-    @Column(nullable = false,length = 20)
+    @Column(nullable = false,length = 100)
     private String estado;
 
-    @Column(nullable = false,length = 20)
+    @Column(nullable = true,length = 100)
     private String perfil;
 
     public Long getId() {

@@ -45,7 +45,7 @@ public class UsuarioController {
                
     }
 
-    @PostMapping
+    @PostMapping("/")
     public ResponseEntity<UsuarioModel> createUser(@RequestBody @NonNull UsuarioModel usuarioModel){
         if (usuarioModel != null) {
             usuarioService.createUser(usuarioModel);
